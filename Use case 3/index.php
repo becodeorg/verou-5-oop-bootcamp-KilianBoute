@@ -27,7 +27,7 @@ fillContentArray(2, 1, 1, $contentArray);
 function showContentArray($contentArray)
 {
     foreach ($contentArray as $key => $content) {
-        echo "<h2>" . $content->showTitle() . "</h2></br>";
+        echo "<h2>" . $content->showTitle() . "</h2>";
         echo "<p>" . $content->getText() . "</p></br>";
     }
 }
@@ -36,5 +36,5 @@ showContentArray($contentArray);
 
 $contentArray[1]->setIsbBreakingNews(true);
 
-echo "</br>-----------After set breaking news: ------------</br>";
+echo "-----------After set breaking news: ------------";
 showContentArray($contentArray);
