@@ -1,9 +1,9 @@
 <?php
 
-class Banana
+require_once "fruit.php";
+class Banana extends Fruit
 {
-    protected $price;
-    protected $tax;
+   
 
     public function __construct()
     {
@@ -11,23 +11,5 @@ class Banana
         $this->tax = 0.06;
     }
 
-    public function getPrice()
-    {
-        return $this->price;
-    }
 
-    public function getTax()
-    {
-        return $this->tax;
-    }
-
-    public function setPrice($price)
-    {
-        $this->price = $price;
-    }
-
-    public function setTax($tax)
-    {
-        $this->tax = $tax;
-    }
 }

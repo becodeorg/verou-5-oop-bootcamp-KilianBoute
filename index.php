@@ -8,6 +8,8 @@ $basket = [];
 $bananaCount = 6;
 $appleCount = 3;
 $wineCount = 2;
+
+$fruitDiscount = 0.5;
 function fillBasket(&$basket, $bananaCount, $appleCount, $wineCount)
 {
     for ($i = 0; $i < $bananaCount; $i++) {
@@ -41,8 +43,20 @@ function getTotalTax($basket)
     return $totalTax;
 }
 
+function calculateDiscount($basket, $discount)
+{
+    foreach ($basket as $key => $item) {
+        if ($item instanceof Fruit) {
+            $item->setPrice($discount * $item->getPrice());
+        };
+    }
+}
+
+
 echo "Total price: " . getTotalPrice($basket) . "</br>";
 echo "Total tax: " . getTotalTax($basket) . "</br>";
+calculateDiscount($basket, 0.5);
+echo "Total discount: " . getTotalPrice($basket) . "</br>";
 
 
 echo '<pre>';
